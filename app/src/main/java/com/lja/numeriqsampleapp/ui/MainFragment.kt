@@ -1,21 +1,21 @@
 package com.lja.numeriqsampleapp.ui
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.lja.numeriqsampleapp.R
-import com.lja.numeriqsampleapp.viewmodel.MainViewModel
+import com.lja.numeriqsampleapp.viewmodel.ArticlesViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class MainFragment : Fragment() {
+
+    private val viewModel: ArticlesViewModel by sharedViewModel()
 
     companion object {
         fun newInstance() = MainFragment()
     }
-
-    private lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,11 +23,4 @@ class MainFragment : Fragment() {
     ): View {
         return inflater.inflate(R.layout.main_fragment, container, false)
     }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
-
 }
