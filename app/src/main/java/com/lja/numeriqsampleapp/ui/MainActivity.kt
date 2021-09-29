@@ -1,9 +1,8 @@
-package com.lja.numeriqsampleapp
+package com.lja.numeriqsampleapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lja.numeriqsampleapp.R
-import com.lja.numeriqsampleapp.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

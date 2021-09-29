@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Numeriqsampleapp">
         <activity
-            android:name="com.lja.numeriqsampleapp.MainActivity"
+            android:name="com.lja.numeriqsampleapp.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

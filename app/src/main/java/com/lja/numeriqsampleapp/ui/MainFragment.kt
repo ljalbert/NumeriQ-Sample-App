@@ -1,4 +1,4 @@
-package com.lja.numeriqsampleapp.ui.main
+package com.lja.numeriqsampleapp.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lja.numeriqsampleapp.R
+import com.lja.numeriqsampleapp.viewmodel.MainViewModel
 
 class MainFragment : Fragment() {
 
