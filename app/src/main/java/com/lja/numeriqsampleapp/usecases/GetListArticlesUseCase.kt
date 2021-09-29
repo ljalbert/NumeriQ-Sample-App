@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 
 class GetListArticlesUseCase(private val articleRepository: ArticleRepository) {
 
-    fun execute(
+    suspend fun execute(
         keyWords: String,
         from: String,
         sortBy: String,

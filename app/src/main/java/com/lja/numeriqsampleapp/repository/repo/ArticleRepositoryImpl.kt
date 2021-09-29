@@ -10,7 +10,7 @@ class ArticleRepositoryImpl(
     private val remoteDataSource: ArticleRemoteDataSource
 ) : ArticleRepository {
 
-    override fun getListArticles(
+    override suspend fun getListArticles(
         keyWords: String,
         from: String,
         sortBy: String,

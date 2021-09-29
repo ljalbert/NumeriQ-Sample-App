@@ -1,7 +1,7 @@
 package com.lja.numeriqsampleapp
 
 import android.app.Application
-import com.lja.numeriqsampleapp.di.appModule
+import com.lja.numeriqsampleapp.di.repoModule
 import com.lja.numeriqsampleapp.di.serviceModule
 import com.lja.numeriqsampleapp.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -16,7 +16,7 @@ class ArticlesApplication : Application() {
         startKoin {
             androidLogger(Level.NONE)
             androidContext(applicationContext)
-            modules(listOf(appModule, viewModelModule, serviceModule))
+            modules(listOf(serviceModule, repoModule, viewModelModule))
         }
     }
 }

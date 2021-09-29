@@ -4,7 +4,7 @@ import com.lja.numeriqsampleapp.service.model.service.ArticleService
 import kotlinx.coroutines.flow.Flow
 
 interface ArticleRepository {
-    fun getListArticles(
+    suspend fun getListArticles(
         keyWords: String,
         from: String,
         sortBy: String,
