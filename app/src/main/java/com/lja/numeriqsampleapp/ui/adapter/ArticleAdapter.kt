@@ -30,6 +30,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleViewHolder>() {
         this.items.addAll(items)
 
         notifyDataSetChanged()
+        //TODO implement diffUtils.callback to improve performance
     }
 
     override fun getItemCount() = items.size
