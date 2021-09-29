@@ -11,11 +11,11 @@ class ArticleRepositoryImpl(
 ) : ArticleRepository {
 
     override suspend fun getListArticles(
-        keyWords: String,
+        query: String,
         from: String,
         sortBy: String,
         apiKey: String
     ): Flow<List<ArticleService>> {
-        return remoteDataSource.getListArticles(keyWords, from, sortBy, apiKey)
+        return remoteDataSource.getListArticles(query, from, sortBy, apiKey)
     }
 }

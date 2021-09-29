@@ -1,6 +1,5 @@
 package com.lja.numeriqsampleapp.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lja.numeriqsampleapp.BuildConfig
@@ -19,9 +18,8 @@ class ArticlesViewModel(
 
     init {
         viewModelScope.launch {
-            try {
             getListArticlesUseCase.execute(
-                keyWords = BuildConfig.BASE_URL,
+                keyWords = BuildConfig.QUERY,
                 from = BuildConfig.FROM,
                 sortBy = BuildConfig.SORTBY,
                 apiKey = BuildConfig.API_KEY
@@ -32,9 +30,6 @@ class ArticlesViewModel(
                 }.collect { articles ->
                     _listArticlesFlow.value = State.Success(articles.map { it.toSharedModel() })
                 }
-            } catch (e: Throwable) {
-                Log.d("LJA", "error")
-            }
         }
     }
 }

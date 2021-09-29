@@ -32,7 +32,7 @@ android {
 
     buildTypes.each {
         it.buildConfigField 'String', 'BASE_URL', base_url
-        it.buildConfigField 'String', 'KEYWORDS', keywords
+        it.buildConfigField 'String', 'QUERY', query
         it.buildConfigField 'String', 'FROM', from
         it.buildConfigField 'String', 'SORTBY', sortBy
         it.buildConfigField 'String', 'API_KEY', api_key
@@ -64,6 +64,7 @@ dependencies {
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit2Ver"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit2Ver"
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
 
     // Picasso
     implementation "com.squareup.picasso:picasso:$picassoVer"

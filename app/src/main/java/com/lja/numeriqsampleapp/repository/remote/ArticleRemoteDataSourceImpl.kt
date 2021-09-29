@@ -10,18 +10,18 @@ class ArticleRemoteDataSourceImpl(
 ) : ArticleRemoteDataSource {
 
     override suspend fun getListArticles(
-        keyWords: String,
+        query: String,
         from: String,
         sortBy: String,
         apiKey: String
     ): Flow<List<ArticleService>> {
         return flow {
-                val articles = articlesApi.getNewReleases(
-                    keyWords = keyWords,
-                    from = from,
-                    sortBy = sortBy,
-                    apiKey = apiKey
-                ).articles!!
+            val articles = articlesApi.getArticles(
+                query = query,
+                from = from,
+                sortBy = sortBy,
+                apiKey = apiKey
+            ).articles!!
 
             emit(articles)
         }

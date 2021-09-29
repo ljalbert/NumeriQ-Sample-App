@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface ArticleRepository {
     suspend fun getListArticles(
-        keyWords: String,
+        query: String,
         from: String,
         sortBy: String,
         apiKey: String
