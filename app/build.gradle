@@ -29,6 +29,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildTypes.each {
+        it.buildConfigField 'String', 'BASE_URL', base_url
+        it.buildConfigField 'String', 'KEYWORDS', keywords
+        it.buildConfigField 'String', 'FROM', from
+        it.buildConfigField 'String', 'SORTBY', sortBy
+        it.buildConfigField 'String', 'API_KEY', api_key
+    }
 }
 
 ext {

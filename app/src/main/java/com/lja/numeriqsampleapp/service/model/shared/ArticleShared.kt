@@ -1,4 +1,4 @@
-package com.lja.numeriqsampleapp.model.shared
+package com.lja.numeriqsampleapp.service.model.shared
 
 data class ArticleShared(
     var source: String?,

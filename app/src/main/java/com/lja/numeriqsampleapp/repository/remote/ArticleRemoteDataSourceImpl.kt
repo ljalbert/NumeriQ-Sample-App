@@ -1,10 +1,27 @@
 package com.lja.numeriqsampleapp.repository.remote
 
-import com.lja.numeriqsampleapp.model.service.ArticleService
+import com.lja.numeriqsampleapp.service.api.ArticlesApi
+import com.lja.numeriqsampleapp.service.model.service.ArticleService
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
 
-class ArticleRemoteDataSourceImpl : ArticleRemoteDataSource {
-    override fun getListArticles(): Flow<List<ArticleService>> {
-        TODO("Not yet implemented")
+class ArticleRemoteDataSourceImpl(
+    private val articlesApi: ArticlesApi
+) : ArticleRemoteDataSource {
+
+    override fun getListArticles(
+        keyWords: String,
+        from: String,
+        sortBy: String,
+        apiKey: String
+    ): Flow<List<ArticleService>> {
+        return flow {
+            articlesApi.getNewReleases(
+                keyWords = keyWords,
+                from = from,
+                sortBy = sortBy,
+                apiKey = apiKey
+            ).articles
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.lja.numeriqsampleapp.model.service
+package com.lja.numeriqsampleapp.service.model.service
 
 
 data class ArticleSourceService(
